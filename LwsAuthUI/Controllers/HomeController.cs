@@ -26,5 +26,13 @@ namespace LwsAuthUI.Controllers
 
             return View();
         }
+
+        [Authorize]
+        public ActionResult Secure()
+        {
+            ViewBag.Message = "You can only view this secret page if you are logged in";
+
+            return View();
+        }
     }
 }
