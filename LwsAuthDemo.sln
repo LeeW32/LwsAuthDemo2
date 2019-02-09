@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LwsAuthUI", "LwsAuthUI\LwsAuthUI.csproj", "{0BD501E6-362A-4C15-81E2-9D9881958BE6}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database1", "Database1\Database1.sqlproj", "{A68431F1-0D10-4140-9FF2-5626DF14E556}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "LwsAuthDB", "Database1\LwsAuthDB.sqlproj", "{A68431F1-0D10-4140-9FF2-5626DF14E556}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
