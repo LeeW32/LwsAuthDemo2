@@ -1,2 +1,28 @@
-﻿    <h3>@ViewBag.Message</h3>
+﻿<h3>@ViewBag.Message</h3>
+
+<div class="jumbotron">
+    <h2>Any authorised users should be able to access this section</h2>
+    <p class="lead">This is section is for any logged in User</p>
+    <p></p>
+</div>
+
+
+@if (Request.IsAuthenticated && User.IsInRole("Main"))
+{
+    <div class="jumbotron">
+        <h2>'Main' role should be able to see this section</h2>
+        <p class="lead">This section is only for users in Main role</p>
+        <p>(Hello, @User.Identity.Name)</p>
+    </div>
+}
+
+@if (Request.IsAuthenticated && User.IsInRole("Office"))
+{
+    <div class="jumbotron">
+        <h2>'Office' role should be able to see this section</h2>
+        <p class="lead">This section is only for users in Office role</p>
+        <p>(Hello, @User.Identity.Name)</p>
+    </div>
+}
+
 
