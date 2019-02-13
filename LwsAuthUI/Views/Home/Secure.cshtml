@@ -1,27 +1,56 @@
 ﻿<h3>@ViewBag.Message</h3>
 
-<div class="jumbotron">
-    <h2>Any authorised users should be able to access this section</h2>
-    <p class="lead">This is section is for any logged in User</p>
-    <p></p>
+<form action="/api/mainonly/getperson">
+    <input type="submit" class="btn btn-success" value="Go to Secure API for Main only" />
+</form>
+
+<form action="/api/officeonly/getperson">
+    <input type="submit" class="btn btn-success" value="Go to Secure API for Office only" />
+</form>
+
+
+<div class="card mb-4">
+    <div class="card-header bg-secondary">
+        <h2>Any authorised users should be able to access this section</h2>
+    </div>
+    <div class="card-body">
+        <p>This is section is for any logged in User</p>
+        <p>(Hello, @User.Identity.Name)</p>
+    </div>
 </div>
 
 
 @if (Request.IsAuthenticated && User.IsInRole("Main"))
 {
-    <div class="jumbotron">
-        <h2>'Main' role should be able to see this section</h2>
-        <p class="lead">This section is only for users in Main role</p>
-        <p>(Hello, @User.Identity.Name)</p>
+    <div class="card">
+        <div class="card-header bg-warning">
+            <h3>'Main' role should be able to see this section</h3>
+        </div>
+        <div class="card-body">
+            <p>This section is only for users in Main role</p>
+        </div>
+        <div class="card-footer">
+            <form action="/api/secureapi/getperson">
+                <input type="submit" class="btn btn-warning" value="Go to Secure API" />
+            </form>
+        </div>
     </div>
 }
 
 @if (Request.IsAuthenticated && User.IsInRole("Office"))
 {
-    <div class="jumbotron">
-        <h2>'Office' role should be able to see this section</h2>
-        <p class="lead">This section is only for users in Office role</p>
-        <p>(Hello, @User.Identity.Name)</p>
+    <div class="card">
+        <div class="card-header bg-info">
+            <h3>'Office' role should be able to see this section</h3>
+        </div>
+        <div class="card-body">
+            <p>This section is only for users in Office role</p>
+        </div>
+        <div class="card-footer">
+            <form action="/api/secureapi/getperson">
+                <input type="submit" class="btn btn-info" value="Go to Secure API" />
+            </form>
+        </div>
     </div>
 }
 

@@ -3,14 +3,14 @@ using System.Web.Http;
 
 namespace LwsAuthUI.Controllers.Api
 {
-    [Authorize]
-    public class SecureApiController : ApiController
+    public class MainOnlyController : ApiController
     {
+        [Authorize(Roles = "Main")]
         public Person GetPerson()
         {
             Person person = new Person
             {
-                Name = "Dilbert",
+                Name = "Main",
                 Age = 34
             };
 
